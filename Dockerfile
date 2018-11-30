@@ -1,4 +1,21 @@
-FROM python:2.7.15-jessie
+FROM ubuntu:14.04
+
+# INSTALL GIT
+RUN apt-get update -qq
+RUN apt-get install git -yqq
+
+# INSTALL DOCKER CE
+RUN apt-get install -qqy \
+    apt-transport-https \
+    ca-certificates \
+    curl \
+    lxc \
+    iptables
+RUN curl -sSL https://get.docker.com/ | sh
+VOLUME /var/lib/docker
+
+# INSTALL PYTHON 2.7 AND PIP
+RUN apt install python2.7 python-pip -qqy
 
 # INSTALL AWSCLI
 RUN pip install awscli --user
