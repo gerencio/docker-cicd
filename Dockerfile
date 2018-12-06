@@ -37,4 +37,4 @@ ENV PATH      $NVM_DIR/versions/node/v$NODE_VERSION/bin:$PATH
 RUN curl -o- -L https://yarnpkg.com/install.sh | bash -s -- --version 1.6.0
 
 # INSTALL GERENCIO UPGRADE
-RUN npm i -g gerencio-upgrade@^3.0.1
+RUN npm i -g gerencio-upgrade@^3.1.1
